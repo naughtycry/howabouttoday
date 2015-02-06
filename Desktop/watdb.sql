@@ -22,7 +22,7 @@ USE `wat` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `wat`.`Users` (
   `userID` INT NOT NULL,
-  `userName` VARCHAR(45) NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
   `userFullName` VARCHAR(45) NOT NULL,
   `password` VARCHAR(20) NOT NULL,
   `userGender` VARCHAR(5) NOT NULL,
