@@ -86,7 +86,7 @@ ALTER TABLE `posts`
 --
 -- Indexes for table `shortdescription`
 --
-ALTER TABLE `shortdescription`
+ALTER TABLE `shortdescriptions`
  ADD PRIMARY KEY (`shortDescriptionID`), ADD KEY `userID` (`userID`);
 
 --
