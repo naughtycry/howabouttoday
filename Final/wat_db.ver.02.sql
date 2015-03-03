@@ -107,7 +107,7 @@ MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `shortdescription`
 --
-ALTER TABLE `shortdescription`
+ALTER TABLE `shortdescriptions`
 MODIFY `shortDescriptionID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
@@ -127,7 +127,7 @@ ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID
 --
 -- Constraints for table `shortdescription`
 --
-ALTER TABLE `shortdescription`
+ALTER TABLE `shortdescriptions`
 ADD CONSTRAINT `shortdescription_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
