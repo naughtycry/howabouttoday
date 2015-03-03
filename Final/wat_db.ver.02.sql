@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- Table structure for table `shortdescription`
 --
 
-CREATE TABLE IF NOT EXISTS `shortdescription` (
+CREATE TABLE IF NOT EXISTS `shortdescriptions` (
 `shortDescriptionID` int(11) NOT NULL,
   `shortDescriptionTitle` varchar(50) NOT NULL,
   `shortDescriptionContent` varchar(300) NOT NULL,
