@@ -16,7 +16,7 @@
 	require_once '../classes/classUser.php';
 	
 	
-	if ( !$_SESSION['userID'] )
+	if ( !@$_SESSION['userID'] )
 	{ 
 		echo "You aren't Login! Click here to  <a href='member.php'>login </a> or <a href='member_new.php'>Register</a>"; 
 	}

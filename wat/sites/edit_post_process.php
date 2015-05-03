@@ -1,22 +1,30 @@
 <?php 
 	require_once '../classes/classUser.php';
-	require_once '../classes/classPost.php';
 
 	include '../libraries/connect_database.php';
 	
-	if(isset($_GET['postID']))
-		$id = $_GET['postID'];
-	else 
-		$id = 0;
+
 		
 	session_start();
 	$post = $_POST['post'];
-	$user_id  = $_SESSION['userID'];
-	$username = $_SESSION['username'];
-	$sql = "INSERT INTO posts(postContent, userID) Values ('".$post."', '".$user_id."')";
-	$sql ="update sinhvien set postContent='$post' where id = $id";
+	$ID = $_POST['postID'];
+	
+	
+	
+	
+	$sql ="update posts set postContent='".$post."' where postID ='".$ID."'";
 
 	$conn->query($sql);
-	header('location: welcome.php');
+    echo "thành công";
 
 ?>
+<html>
+<head>
+<link href="../libraries/stylesheet.css" rel="stylesheet" type="text/css" />
+<script src="../libraries/jquery-1.11.2.min.js"></script>
+<link href="../libraries/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<head>
+<body>
+<a href = "welcome.php"> quay lại trang chủ </a>
+</body>
+</html>

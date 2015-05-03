@@ -14,8 +14,11 @@
 		$_SESSION['userID'] = $row['userID'];
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['password'] = $row['password'];
-
-		header('Location: welcome.php');
+        if($_SESSION['userID'] == 1 && $password =='123456'){
+            header('Location: admin/admin.php');
+        }
+        else 
+            header('Location: welcome.php');
 	}
 	else{
 		header('Location: ../sites/member.php?warn');

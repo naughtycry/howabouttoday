@@ -11,11 +11,15 @@
 
 	include '../libraries/connect_database.php';
 
-	$username = $_SESSION['username'];
-	$select = "SELECT * FROM posts order by postID DESC";
+	$username = @$_SESSION['username'];
+	$userID = @$_SESSION['userID'];
+	$select = "SELECT * FROM posts where userID = '".$userID."' order by postID DESC";
 	$result = $conn -> query($select);
 
-	while ($row = $result -> fetch_assoc()){	
+	while ($row = $result -> fetch_assoc()){
+	$_SESSION['postID'] = $row['postID'];
+
+	
 ?>
 
 <table width="788" class="table">
@@ -24,13 +28,16 @@
   </tr>
   <tr>
     <td><?php echo $row['postContent'] ?></td>
+    <td><?php $_SESSION['postID'] = $row['postID'];  ?></td>
   </tr>
+
+
 </table>
 <table width="345" class="table">
   <tr>
     <td width="115">date: <?php echo $row['postCreatedDate']?></td>
-    <td width="115"><?php echo "<br><a href='edit_post.php'>edit</a>";?></td>
-    <td width="115">delete</td>
+    <td width="115"><?php echo "<a href='edit_post.php?postID=".$row['postID']."'>edit</a>";?></td>
+    <td width="115"><?php echo "<a href='delete_post.php?postID=".$row['postID']."'>delete</a>";?></td>
   </tr>
 </table>
 <?php
